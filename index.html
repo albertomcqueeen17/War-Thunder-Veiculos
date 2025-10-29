@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>War Thunder Database - Consulta de Vehículos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-logo"></div>
+    
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <img src="assets/war-thunder-logo.png" alt="War Thunder" class="logo-image">
+                <span>Database</span>
+            </h1>
+            <nav class="nav">
+                <a href="#tanques" class="nav-link">Tanques</a>
+                <a href="#aviones" class="nav-link">Aviones</a>
+                <a href="#helicopteros" class="nav-link">Helicópteros</a>
+                <a href="#barcos" class="nav-link">Barcos</a>
+                <a href="#info-juego" class="nav-link nav-button" id="infoBtn">Información del Juego</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Base de Datos de Vehículos</h2>
+                    <p>Consulta las especificaciones técnicas de más de 2,000 vehículos militares</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="search-section">
+            <div class="container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar vehículo por nombre, nación o BR...">
+                    <button id="searchBtn" class="search-btn">Buscar</button>
+                </div>
+                
+                <div class="filters">
+                    <select id="nationFilter" class="filter-select">
+                        <option value="">Todas las naciones</option>
+                        <option value="usa">USA</option>
+                        <option value="urss">URSS/Rusia</option>
+                        <option value="alemania">Alemania</option>
+                        <option value="uk">Reino Unido</option>
+                        <option value="japon">Japón</option>
+                        <option value="francia">Francia</option>
+                        <option value="italia">Italia</option>
+                        <option value="china">China</option>
+                        <option value="suecia">Suecia</option>
+                    </select>
+                    
+                    <select id="typeFilter" class="filter-select">
+                        <option value="">Todos los tipos</option>
+                        <option value="tanque">Tanque</option>
+                        <option value="avion">Avión</option>
+                        <option value="helicoptero">Helicóptero</option>
+                        <option value="barco">Barco</option>
+                    </select>
+                    
+                    <select id="brFilter" class="filter-select">
+                        <option value="">Todos los BR</option>
+                        <option value="1.0">1.0 - 2.0</option>
+                        <option value="2.3">2.3 - 3.3</option>
+                        <option value="3.7">3.7 - 4.7</option>
+                        <option value="5.0">5.0 - 6.0</option>
+                        <option value="6.3">6.3 - 7.3</option>
+                        <option value="7.7">7.7 - 8.7</option>
+                        <option value="9.0">9.0 - 10.0</option>
+                        <option value="11.0">11.0+</option>
+                    </select>
+                </div>
+
+                <div class="database-stats">
+                    <p>Base de datos: <span id="totalVehicles">49</span> vehículos - 9 naciones - 4 tipos de vehículos</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="vehicles-section">
+            <div class="container">
+                <div id="vehiclesGrid" class="vehicles-grid">
+                    <!-- Los vehículos se cargan aquí dinámicamente -->
+                </div>
+            </div>
+        </section>
+
+        <section class="statistics-section">
+            <div class="container">
+                <h2>Estadísticas de la Base de Datos</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total de Vehículos</h3>
+                        <span class="stat-number" id="totalStats">49</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Naciones</h3>
+                        <span class="stat-number">9</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Tipos</h3>
+                        <span class="stat-number">4</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Eras</h3>
+                        <span class="stat-number">8</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Información del Juego -->
+    <div id="gameInfoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-header">
+                <h2>War Thunder - Información Completa</h2>
+            </div>
+            <div class="modal-body">
+                <!-- Contenido se carga dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 War Thunder Database. Datos no oficiales. War Thunder es una marca registrada de Gaijin Entertainment.</p>
+        </div>
+    </footer>
+
+    <script src="vehicles_database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
